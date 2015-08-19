@@ -1,0 +1,13 @@
+<h1><%= @article.title %></h1>
+  <p><%= @article.text %></p>
+  <a href="/">Retour</a>
+<%= form_tag "/articles/#{@article.id}", method: "post" do %>
+  <input type="text" name="author" />
+  <textarea rows="4" cols="50" name="content">
+</textarea>
+  <input type="submit" value="Valider" />
+<% end %>
+<% @article.comments.each do |comment|%>
+<h5><%= comment.author %></h5>
+<p><%= comment.content %></p>
+<%end%>

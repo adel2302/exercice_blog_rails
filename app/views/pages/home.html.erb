@@ -1,0 +1,5 @@
+<h1>Mon Blog</h1>
+<%= paginate @les_articles %>
+<% @les_articles.each do |article| %>
+  <p><%= article_link article %></p>
+<% end %>
