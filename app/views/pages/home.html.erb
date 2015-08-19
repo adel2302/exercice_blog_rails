@@ -1,5 +1,19 @@
-<h1>Mon Blog</h1>
-<%= paginate @les_articles %>
-<% @les_articles.each do |article| %>
-  <p><%= article_link article %></p>
-<% end %>
+<div class="row">
+   <div class="col-md-4 col-md-offset-4">
+   <h1>Mon Blog</h1>
+     <table class="table table-bordered">
+      <tr>
+      	<td>Id Articles</td>
+        <td>Titre Articles</td>
+      </tr>
+       <% @les_articles.each do |article| %>
+         <tr>
+           <td><%=article.id %></td>
+           <td><%= article_link article %></td>
+         </tr>
+       <% end %>
+    </table>
+    <%= paginate @les_articles %>
+  </div>
+</div>
+
